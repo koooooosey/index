@@ -1,0 +1,656 @@
+@charset "utf-8";
+
+/*base style*/
+
+body {
+    font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: white;
+    background-color: black;
+    overflow-x: hidden;
+    background-image: url(./img/tsuki.svg), url(./img/hikousi1.png), url(./img/zinkoueisei.svg), url(./img/hosizora.svg);
+    background-repeat: no-repeat;
+    background-size: 50%, 40%, 60%, 100%;
+    background-position: right 220px, left 1100px, right 1500px, 50% 3200px;
+}
+
+
+
+
+/* FV */
+.FV_rogo{
+	background: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 999;
+}
+.FV_rogo p {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	z-index: 9999;
+	width: 280px;
+}
+
+
+
+
+
+
+/* header */
+
+.header {
+    display: flex;
+    flex-direction: row;
+    margin-left: 200px;
+}
+
+.rogo {
+    margin-right: 20px;
+}
+
+.rogo_tittle {
+    margin: 0;
+}
+
+
+
+
+/* body */
+
+.section-pick_up {
+    color: black;
+    margin-top: 80px;
+    font-size: 130px;
+    line-height: 1.0;
+    margin-left: 200px;
+    text-shadow:1px 1px 0 #FFF, 1px 1px 0 #FFF,
+                1px 1px 0 #FFF, 1px 1px 0 #FFF,
+                0px 1px 0 #FFF,  0 1px 0 #FFF,
+                1px 0 0 #FFF, 1px 0 0 #FFF;
+}
+
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+  width:94%;
+  margin:0 auto;
+}
+
+.slider img {
+  width: 450px;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+  height:auto;
+}
+
+.img-Text {
+  position: relative;
+}
+
+.img_text {
+  position: absolute;/*重ねたい子要素にabsolute*/
+  top: 255px;
+  left: 50%;
+  transform: translate(-50%,-50%);/*センター寄せの修正*/
+  color: #fff;
+  margin: 0px;/*文字がずれている場合や*/
+  padding: 0px;/*文字が折り返される場合*/
+  background-color: #333;
+  opacity: 0.7;
+  width: 450px;
+  height: 90px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; /* 任意の行数を指定 */
+}
+
+.slider .slick-slide {
+transform: scale(0.8);/*左右の画像のサイズを80%に*/
+transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, .slick-next {
+  position: absolute;/*絶対配置にする*/
+  top: 42%;
+  cursor: pointer;/*マウスカーソルを指マークに*/
+  outline: none;/*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #666;/*矢印の色*/
+  border-right: 2px solid #666;/*矢印の色*/
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+  left: -1.5%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+  right: -1.5%;
+  transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+  text-align:center;
+margin:20px 0 0 0;
+}
+
+.slick-dots li {
+  display:inline-block;
+margin:0 5px;
+}
+
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width: 10px;/*ドットボタンのサイズ*/
+  height:10px;/*ドットボタンのサイズ*/
+  display:block;
+  border-radius:50%;
+  border: 1px;
+  background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+  background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+ul{
+margin:0;
+padding: 0;
+list-style: none;
+}
+
+a{
+color: #333;
+}
+
+a:hover,
+a:active{
+text-decoration: none;
+}
+
+.img {
+    justify-content: center;
+}
+
+.section-popular_article {
+    color: black;
+    padding-top: 720px;
+    font-size: 130px;
+    line-height: 1.0;
+    margin-left: 200px;
+    margin-bottom: 70px;
+    text-shadow:1px 1px 0 #FFF, 1px 1px 0 #FFF,
+                1px 1px 0 #FFF, 1px 1px 0 #FFF,
+                0px 1px 0 #FFF,  0 1px 0 #FFF,
+                1px 0 0 #FFF, 1px 0 0 #FFF;
+}
+
+.fadeUp{
+  animation-name:fadeUpAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(100px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+
+.popular_article {
+    margin-left: 200px;
+    margin-block: 0;
+    display: flex;
+}
+
+.jyuni {
+    margin-left: 160px;
+    margin-top: 50px;
+    margin-bottom: -10px;
+}
+
+
+.tittle {
+    margin-inline-start: 90px;
+    margin-block-end: 0px;
+}
+
+.description {
+    margin-inline-start: 90px;
+    margin-inline-end: 90px;
+    margin-block-start: 0px;
+}
+
+.section-new_article {
+    clear: both;
+    color: black;
+    padding-top: 200px;
+    font-size: 130px;
+    line-height: 1.0;
+    margin-left: 200px;
+    text-shadow:1px 1px 0 #FFF, 1px 1px 0 #FFF,
+                1px 1px 0 #FFF, 1px 1px 0 #FFF,
+                0px 1px 0 #FFF,  0 1px 0 #FFF,
+                1px 0 0 #FFF, 1px 0 0 #FFF;
+}
+
+.NEW_ARTICLE {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new_article {
+  margin-left: 190px;
+  margin-bottom: 50px;
+  width: 330px
+}
+
+.date {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.text {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+
+
+/* media */
+
+.OSM {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.OSM_img {
+    text-align: center;
+}
+
+.hover_img:hover {
+    transform: translateY(-5px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*レスポンシブル化*/
+
+@media screen and (max-width: 1024px){
+  .header {
+    margin-left: 120px;
+  }
+
+  .section-pick_up {
+    margin-left: 130px;
+    font-size: 130px;
+  }
+
+  .section-popular_article {
+    margin-left: 130px;
+    font-size: 130px;
+  }
+
+  .popular_article {
+    margin-left: 130px;
+  }
+  
+  .jyuni {
+    margin-left: 90px;
+  }
+
+  .section-new_article {
+    margin-left: 130px;
+    font-size: 130px;
+  }
+
+  .new_article {
+    margin-left: 130px;
+  }
+} 
+
+
+@media screen and (max-width: 768px){
+  body {
+    background-image: url(./img/tsuki.svg), url(./img/hikousi1.png), url(./img/zinkoueisei.svg), url(./img/hosizora.svg);
+    background-repeat: no-repeat;
+    background-size: 50%, 40%, 60%, 100%;
+    background-position: right 200px, left 830px, right 1100px, 50% 2700px;
+  }
+
+  .header {
+    margin-left: 100px;
+  }
+
+  .section-pick_up {
+    font-size: 100px;
+    margin-left: 100px;
+  }
+
+  .section-popular_article {
+    padding-top: 400px;
+    margin-left: 100px;
+    font-size: 100px;
+  }
+
+  .jyuni {
+    margin-left: 60px;
+  }
+
+  .popular_article {
+    margin-left: 100px;
+    margin-right: 0px;
+  }
+
+  .popular_article-figure {
+    width: 300px;
+    height: 200px;
+  }
+
+  .tittle {
+    margin-inline-start: 50px;
+  }
+
+  .description {
+    margin-inline-start: 50px;
+    margin-inline-end: 50px;
+    margin-block-start: 0px;
+  }
+
+  .section-new_article {
+    margin-left: 100px;
+    font-size: 100px;
+  }
+
+  .new_article {
+    width: 240px;
+    margin-left: 90px;
+  }
+
+  .new_article-img {
+    width: 240px;
+    height: 160px;
+  }
+} 
+
+
+@media screen and (max-width: 426px) {
+  body {
+    background-image: url(./img/tsuki.svg), url(./img/hikousi1.png), url(./img/zinkoueisei.svg), url(./img/hosizora.svg);
+    background-repeat: no-repeat;
+    background-size: 50%, 60%, 70%, 100%;
+    background-position: right 200px, left 750px, right 1050px, 50% 2900px;
+  }
+
+  .header {
+    margin-left: 10px;
+  }
+
+  .rogo_tittle {
+    font-size: 30px;
+  }
+
+  .section-pick_up {
+    font-size: 70px;
+    margin-left: 30px;
+  }
+  
+  .slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:90%;
+    margin:0 auto;
+  }
+
+  .section-popular_article {
+    font-size: 70px;
+    margin-left: 30px;
+  }
+
+  .jyuni {
+    margin-left: 20px;
+  }
+
+  .popular_article {
+    display: block;
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .popular_article-figure {
+    width: 330px;
+    height: 220px;
+    margin-left: 0px;
+  }
+
+  .figcaption {
+    text-align: left;
+    margin-left: 30px;
+  }
+
+  .tittle {
+    margin-inline-start: 10px;
+    margin-block-start: 0px;
+  }
+
+  .description {
+    margin-inline-start: 10px;
+    margin-inline-end: 40px;
+  }
+
+  .section-new_article {
+    font-size: 70px;
+    margin-left: 30px;
+  }
+
+  .new_article {
+    margin-left: 40px;
+  }
+
+  .new_article-img {
+    width: 330px;
+    height: 220px;
+  }
+
+  .article {
+    width: 330px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  body {
+    background-image: url(./img/tsuki.svg), url(./img/hikousi1.png), url(./img/zinkoueisei.svg), url(./img/hosizora.svg);
+    background-repeat: no-repeat;
+    background-size: 60%, 70%, 70%, 100%;
+    background-position: right 150px, left 650px, right 1000px, 50% 2680px;
+  }
+
+  .header {
+    margin-left: 10px;
+  }
+
+  .rogo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .rogo_tittle {
+    font-size: 25px;
+  }
+
+  .section-pick_up {
+    font-size: 60px;
+    margin-left: 20px;
+  }
+
+  .section-popular_article {
+    font-size: 60px;
+    margin-left: 20px;
+  }
+
+  .jyuni {
+    margin-left: 10px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .popular_article {
+    display: block;
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .popular_article-figure {
+    width: 300px;
+    height: 200px;
+  }
+
+  .figcaption {
+    margin-inline-start: 30px;
+    margin-inline-end: 30px;
+  }
+
+  .tittle {
+    margin-inline-start: 0px;
+  }
+
+  .description {
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  .section-new_article {
+    font-size: 60px;
+    margin-left: 20px;
+  }
+
+  .new_article {
+    margin-left: 30px;
+  }
+
+  .new_article-img {
+    width: 300px;
+    height: 200px;
+  }
+
+  .text {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 320px){
+  body {
+    background-image: url(./img/tsuki.svg), url(./img/hikousi1.png), url(./img/zinkoueisei.svg), url(./img/hosizora.svg);
+    background-repeat: no-repeat;
+    background-size: 65%, 75%, 70%, 130%;
+    background-position: 190px 150px, left 680px, 150px 1030px, 50% 2650px;
+  }
+
+  .header {
+    margin-left: 5px;
+  }
+
+  .rogo {
+    margin-right: 10px;
+  }
+
+  .section-pick_up {
+    font-size: 60px;
+    margin-left: 10px;
+  }
+
+  .section-popular_article {
+    font-size: 60px;
+    margin-left: 10px;
+  }
+
+  .jyuni {
+    margin-left: 10px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .popular_article {
+    display: block;
+    text-align: center;
+    margin-left: 25px;
+  }
+
+  .figcaption {
+    margin-inline-start: 0px;
+    width: 300px;
+  }
+
+  .tittle {
+    margin-inline-start: 0px;
+  }
+
+  .description {
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  .section-new_article {
+    font-size: 60px;
+    margin-left: 10px;
+  }
+
+  .new_article {
+    margin-left: 25px;
+  }
+
+  .new_article-img {
+    width: 300px;
+    height: 200px;
+  }
+
+  .text {
+    margin-right: 30px;
+  }
+}
